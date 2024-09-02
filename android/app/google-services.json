@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "882839078564",
+    "firebase_url": "https://potent-bulwark-434423-t6-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "potent-bulwark-434423-t6",
+    "storage_bucket": "potent-bulwark-434423-t6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882839078564:android:ffb65f6f369caad404c831",
+        "android_client_info": {
+          "package_name": "com.merchant.prosperityprimeglobal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQHNbeQLr8kgRE_z4b1XgSeT7W4qarLH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
