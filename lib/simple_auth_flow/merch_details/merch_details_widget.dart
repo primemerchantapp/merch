@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,10 +13,10 @@ export 'merch_details_model.dart';
 class MerchDetailsWidget extends StatefulWidget {
   const MerchDetailsWidget({
     super.key,
-    required this.merchantsD,
+    required this.food,
   });
 
-  final MerchantsRecord? merchantsD;
+  final MerchantsRecord? food;
 
   @override
   State<MerchDetailsWidget> createState() => _MerchDetailsWidgetState();
@@ -72,7 +73,10 @@ class _MerchDetailsWidgetState extends State<MerchDetailsWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Page Title',
+                  valueOrDefault<String>(
+                    widget.food?.name,
+                    'Merch',
+                  ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -108,34 +112,79 @@ class _MerchDetailsWidgetState extends State<MerchDetailsWidget> {
                         CachedNetworkImage(
                           fadeInDuration: const Duration(milliseconds: 500),
                           fadeOutDuration: const Duration(milliseconds: 500),
-                          imageUrl:
-                              'https://images.unsplash.com/photo-1624008915317-cb3ad69b16ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FyZWhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                          imageUrl: widget.food!.image1,
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 230.0,
                           fit: BoxFit.cover,
                         ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 16.0, 0.0, 0.0),
-                          child: Text(
-                            'Facility Name',
-                            style: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .headlineMediumFamily),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 20.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 16.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Text(
+                                      'Opens',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
+                                          ),
+                                    ),
+                                  ),
                                 ),
+                                Text(
+                                  '📞 ${valueOrDefault<String>(
+                                    widget.food?.phone,
+                                    '+63901 234 5678',
+                                  )}',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 8.0, 0.0, 0.0),
                           child: Text(
-                            'Warehouse',
+                            valueOrDefault<String>(
+                              widget.food?.opens,
+                              '5454',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -153,7 +202,10 @@ class _MerchDetailsWidgetState extends State<MerchDetailsWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 12.0, 20.0, 4.0),
                           child: Text(
-                            'The best of all 3 worlds, Row & Flow offers high intensity rowing and strength intervals followed by athletic based yoga sure to enhance flexible and clear the mind.',
+                            valueOrDefault<String>(
+                              widget.food?.located,
+                              'sdas',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
@@ -177,7 +229,7 @@ class _MerchDetailsWidgetState extends State<MerchDetailsWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 12.0),
                           child: Text(
-                            'Past Inspections',
+                            'Rating  4.6/5 ⭐⭐⭐⭐★',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -197,35 +249,43 @@ class _MerchDetailsWidgetState extends State<MerchDetailsWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          child: Builder(builder: (context) {
-                            final googleMapMarker = widget.merchantsD;
-                            return FlutterFlowGoogleMap(
-                              controller: _model.googleMapsController,
-                              onCameraIdle: (latLng) => setState(
-                                  () => _model.googleMapsCenter = latLng),
-                              initialLocation: _model.googleMapsCenter ??=
-                                  widget.merchantsD!.address!,
-                              markers: [
-                                if (googleMapMarker != null)
-                                  FlutterFlowMarker(
-                                    googleMapMarker.reference.path,
-                                    googleMapMarker.address!,
-                                  ),
-                              ],
-                              markerColor: GoogleMarkerColor.violet,
-                              mapType: MapType.normal,
-                              style: GoogleMapStyle.silver,
-                              initialZoom: 14.0,
-                              allowInteraction: true,
-                              allowZoom: true,
-                              showZoomControls: true,
-                              showLocation: true,
-                              showCompass: true,
-                              showMapToolbar: true,
-                              showTraffic: true,
-                              centerMapOnMarkerTap: true,
-                            );
-                          }),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Builder(builder: (context) {
+                              final googleMapMarker = widget.food?.address;
+                              return FlutterFlowGoogleMap(
+                                controller: _model.googleMapsController,
+                                onCameraIdle: (latLng) => setState(
+                                    () => _model.googleMapsCenter = latLng),
+                                initialLocation: _model.googleMapsCenter ??=
+                                    currentUserDocument!.address!,
+                                markers: [
+                                  if (googleMapMarker != null)
+                                    FlutterFlowMarker(
+                                      googleMapMarker.serialize(),
+                                      googleMapMarker,
+                                    ),
+                                ],
+                                markerColor: GoogleMarkerColor.violet,
+                                markerImage: const MarkerImage(
+                                  imagePath:
+                                      'assets/images/Untitled_design.gif',
+                                  isAssetImage: true,
+                                  size: 40.0 ?? 20,
+                                ),
+                                mapType: MapType.normal,
+                                style: GoogleMapStyle.silver,
+                                initialZoom: 14.0,
+                                allowInteraction: true,
+                                allowZoom: true,
+                                showZoomControls: true,
+                                showLocation: true,
+                                showCompass: true,
+                                showMapToolbar: true,
+                                showTraffic: true,
+                                centerMapOnMarkerTap: true,
+                              );
+                            }),
+                          ),
                         ),
                       ],
                     ),

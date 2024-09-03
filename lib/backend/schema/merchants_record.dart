@@ -100,6 +100,16 @@ class MerchantsRecord extends FirestoreRecord {
   String get opens => _opens ?? '';
   bool hasOpens() => _opens != null;
 
+  // "located" field.
+  String? _located;
+  String get located => _located ?? '';
+  bool hasLocated() => _located != null;
+
+  // "phone" field.
+  String? _phone;
+  String get phone => _phone ?? '';
+  bool hasPhone() => _phone != null;
+
   void _initializeFields() {
     _merchantId = snapshotData['merchantId'] as String?;
     _name = snapshotData['name'] as String?;
@@ -118,6 +128,8 @@ class MerchantsRecord extends FirestoreRecord {
     _image3 = snapshotData['image3'] as String?;
     _video = snapshotData['video'] as String?;
     _opens = snapshotData['opens'] as String?;
+    _located = snapshotData['located'] as String?;
+    _phone = snapshotData['phone'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -172,6 +184,8 @@ Map<String, dynamic> createMerchantsRecordData({
   String? image3,
   String? video,
   String? opens,
+  String? located,
+  String? phone,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -192,6 +206,8 @@ Map<String, dynamic> createMerchantsRecordData({
       'image3': image3,
       'video': video,
       'opens': opens,
+      'located': located,
+      'phone': phone,
     }.withoutNulls,
   );
 
@@ -219,7 +235,9 @@ class MerchantsRecordDocumentEquality implements Equality<MerchantsRecord> {
         e1?.image2 == e2?.image2 &&
         e1?.image3 == e2?.image3 &&
         e1?.video == e2?.video &&
-        e1?.opens == e2?.opens;
+        e1?.opens == e2?.opens &&
+        e1?.located == e2?.located &&
+        e1?.phone == e2?.phone;
   }
 
   @override
@@ -240,7 +258,9 @@ class MerchantsRecordDocumentEquality implements Equality<MerchantsRecord> {
         e?.image2,
         e?.image3,
         e?.video,
-        e?.opens
+        e?.opens,
+        e?.located,
+        e?.phone
       ]);
 
   @override

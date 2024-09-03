@@ -627,8 +627,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                                   ));
 
                                               context.pushNamedAuth(
-                                                  'Homebookingapp',
-                                                  context.mounted);
+                                                  'Homepage', context.mounted);
                                             },
                                             text: 'Create Account',
                                             options: FFButtonOptions(

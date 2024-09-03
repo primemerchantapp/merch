@@ -15,8 +15,6 @@ export '/simple_auth_flow/auth_3_verify_phone/auth3_verify_phone_widget.dart'
     show Auth3VerifyPhoneWidget;
 export '/simple_auth_flow/auth_3_forgot_password/auth3_forgot_password_widget.dart'
     show Auth3ForgotPasswordWidget;
-export '/simple_auth_flow/homebookingapp/homebookingapp_widget.dart'
-    show HomebookingappWidget;
 export '/simple_auth_flow/map_view_merch/map_view_merch_widget.dart'
     show MapViewMerchWidget;
 export '/simple_auth_flow/merch_details/merch_details_widget.dart'

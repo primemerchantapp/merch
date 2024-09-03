@@ -133,24 +133,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Auth3ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'Homebookingapp',
-          path: '/homebookingapp',
-          builder: (context, params) => const HomebookingappWidget(),
-        ),
-        FFRoute(
           name: 'mapViewMerch',
           path: '/mapViewMerch',
-          builder: (context, params) => const MapViewMerchWidget(),
+          builder: (context, params) => MapViewMerchWidget(
+            merch: params.getParam(
+              'merch',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['merchants'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'merchDetails',
           path: '/merchDetails',
           asyncParams: {
-            'merchantsD': getDoc(['merchants'], MerchantsRecord.fromSnapshot),
+            'food': getDoc(['merchants'], MerchantsRecord.fromSnapshot),
           },
           builder: (context, params) => MerchDetailsWidget(
-            merchantsD: params.getParam(
-              'merchantsD',
+            food: params.getParam(
+              'food',
               ParamType.Document,
             ),
           ),
@@ -340,13 +342,19 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  child: Image.asset(
-                    'assets/images/WhatsApp_Image_2024-09-02_at_8.27.08_AM-removebg-preview_(1).png',
-                    fit: BoxFit.contain,
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/Untitled_design.gif',
+                          width: 300.0,
+                          height: 300.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;

@@ -1,4 +1,3 @@
-import '/components/modals/no_trip_booked_modal/no_trip_booked_modal_widget.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -85,7 +84,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                               children: [
                                                 Expanded(
                                                   child: Text(
-                                                    'Trips',
+                                                    'Properity Prime Global',
                                                     maxLines: 1,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -124,7 +123,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                       children: [
                                                         Expanded(
                                                           child: Text(
-                                                            'Upcoming reservations',
+                                                            'Be one of our Merchants!',
                                                             maxLines: 1,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -288,7 +287,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           child:
                                                                               Container(
                                                                             width:
-                                                                                70.0,
+                                                                                82.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -299,9 +298,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                               padding: const EdgeInsets.all(4.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'In 2 weeks',
+                                                                                    '5/5 Ratings',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
@@ -339,7 +339,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                         Expanded(
                                                                           child:
                                                                               Text(
-                                                                            'Quan 1',
+                                                                            'Top  Merchants',
                                                                             maxLines:
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).headlineLarge.override(
@@ -359,7 +359,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                         Expanded(
                                                                           child:
                                                                               Text(
-                                                                            'Entire rental unit hosted by Stay & Fun',
+                                                                            'Becoming a Prime Merchant is the most amazing!',
                                                                             maxLines:
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -400,7 +400,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                       flex: 1,
                                                                       child:
                                                                           Text(
-                                                                        'Feb 17-18',
+                                                                        'Sales\nGrowth',
                                                                         maxLines:
                                                                             3,
                                                                         style: FlutterFlowTheme.of(context)
@@ -439,7 +439,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                               text: TextSpan(
                                                                                 children: [
                                                                                   TextSpan(
-                                                                                    text: '207 Entire rental unit hosted by Stay & Fun',
+                                                                                    text: 'From 100 Baskets to 520 baskets a',
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           letterSpacing: 0.0,
@@ -451,7 +451,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                     style: TextStyle(),
                                                                                   ),
                                                                                   TextSpan(
-                                                                                    text: 'Vietnam',
+                                                                                    text: 'Week Sales!',
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -508,7 +508,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                             children: [
                                                               Expanded(
                                                                 child: Text(
-                                                                  'Explore things to do near Quan1',
+                                                                  'Explore all other merchants...',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
@@ -786,72 +786,87 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          RichText(
-                                                            textScaler:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .textScaler,
-                                                            text: TextSpan(
-                                                              children: [
-                                                                TextSpan(
-                                                                  text:
-                                                                      'Can\'t find your reservation here?',
-                                                                  style: FlutterFlowTheme.of(
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              await launchURL(
+                                                                  'https://prosperityprimeglobal.com/');
+                                                            },
+                                                            child: RichText(
+                                                              textScaler:
+                                                                  MediaQuery.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                      ),
-                                                                ),
-                                                                const TextSpan(
-                                                                  text: ' ',
-                                                                  style:
-                                                                      TextStyle(),
-                                                                ),
-                                                                TextSpan(
-                                                                  text:
-                                                                      'visit the Help Center',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        decoration:
-                                                                            TextDecoration.underline,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
-                                                                      ),
-                                                                )
-                                                              ],
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyLargeFamily,
-                                                                    color: FlutterFlowTheme.of(
+                                                                      .textScaler,
+                                                              text: TextSpan(
+                                                                children: [
+                                                                  TextSpan(
+                                                                    text:
+                                                                        'Tell us somethingg so we can improve it?',
+                                                                    style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .secondaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
                                                                   ),
+                                                                  const TextSpan(
+                                                                    text: ' ',
+                                                                    style:
+                                                                        TextStyle(),
+                                                                  ),
+                                                                  TextSpan(
+                                                                    text:
+                                                                        'visit Prime Web',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          decoration:
+                                                                              TextDecoration.underline,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
+                                                                        ),
+                                                                  )
+                                                                ],
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
@@ -881,7 +896,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           12.0),
                                                               child:
                                                                   Image.network(
-                                                                'https://picsum.photos/seed/938/600',
+                                                                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHx1c2VyJTIwYXZhdGFyfGVufDB8fHx8MTcyNTMzNTI0Nnww&ixlib=rb-4.0.3&q=80&w=1080',
                                                                 width: 40.0,
                                                                 height: 40.0,
                                                                 fit: BoxFit
@@ -910,7 +925,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                         Expanded(
                                                                           child:
                                                                               Text(
-                                                                            'Review your stay',
+                                                                            'Review your Prime experience',
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                   letterSpacing: 0.0,
@@ -932,7 +947,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                               TextSpan(
                                                                             children: [
                                                                               TextSpan(
-                                                                                text: 'Quan 1',
+                                                                                text: 'Jane DIaz',
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -945,7 +960,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 style: TextStyle(),
                                                                               ),
                                                                               TextSpan(
-                                                                                text: 'Feb 17-18, 2023',
+                                                                                text: 'Pasig City, Manila',
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -1038,7 +1053,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                'Where you\'ve been',
+                                                                'Become a Prime Merchant Today!',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
@@ -1073,9 +1088,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             8.0),
                                                                     child: Image
                                                                         .network(
-                                                                      'https://picsum.photos/seed/938/600',
+                                                                      'https://images.unsplash.com/photo-1695654397438-9856b753d83f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8bWFya2V0fGVufDB8fHx8MTcyNTMzNTQyM3ww&ixlib=rb-4.0.3&q=80&w=1080',
                                                                       width:
-                                                                          60.0,
+                                                                          98.0,
                                                                       height:
                                                                           60.0,
                                                                       fit: BoxFit
@@ -1104,7 +1119,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             children: [
                                                                               Expanded(
                                                                                 child: Text(
-                                                                                  'Quan 1',
+                                                                                  'Inquire! Get Listed!',
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -1121,7 +1136,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             children: [
                                                                               Expanded(
                                                                                 child: Text(
-                                                                                  'Hosted by Stay & Fun ',
+                                                                                  'Post your business',
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
@@ -1139,7 +1154,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             children: [
                                                                               Expanded(
                                                                                 child: Text(
-                                                                                  'Feb 17 - 18, 2023',
+                                                                                  'Boosted Sales via our Marketers!',
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
@@ -1168,109 +1183,6 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                         ),
                                                       ].divide(const SizedBox(
                                                           height: 16.0)),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          RichText(
-                                                            textScaler:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .textScaler,
-                                                            text: TextSpan(
-                                                              children: [
-                                                                TextSpan(
-                                                                  text:
-                                                                      'Can\'t find your reservation here?',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                      ),
-                                                                ),
-                                                                const TextSpan(
-                                                                  text: ' ',
-                                                                  style:
-                                                                      TextStyle(),
-                                                                ),
-                                                                TextSpan(
-                                                                  text:
-                                                                      'visit the Help Center',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        decoration:
-                                                                            TextDecoration.underline,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
-                                                                      ),
-                                                                )
-                                                              ],
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyLargeFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    child: wrapWithModel(
-                                                      model: _model
-                                                          .noTripBookedModalModel,
-                                                      updateCallback: () =>
-                                                          setState(() {}),
-                                                      child:
-                                                          const NoTripBookedModalWidget(),
                                                     ),
                                                   ),
                                                 ].divide(

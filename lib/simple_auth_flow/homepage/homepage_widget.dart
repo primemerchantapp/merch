@@ -3,6 +3,7 @@ import '/components/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -219,10 +220,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                         .secondaryBackground,
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       width: 1.0,
                                                     ),
                                                   ),
@@ -230,14 +230,28 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                     alignment:
                                                         const AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .mapMarkedAlt,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      size: 24.0,
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                            'mapViewMerch');
+                                                      },
+                                                      child: FaIcon(
+                                                        FontAwesomeIcons
+                                                            .mapMarkedAlt,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 24.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -452,7 +466,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           'merchDetails',
                                                                           queryParameters:
                                                                               {
-                                                                            'merchantsD':
+                                                                            'food':
                                                                                 serializeParam(
                                                                               listViewMerchantsRecord,
                                                                               ParamType.Document,
@@ -460,7 +474,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           }.withoutNulls,
                                                                           extra: <String,
                                                                               dynamic>{
-                                                                            'merchantsD':
+                                                                            'food':
                                                                                 listViewMerchantsRecord,
                                                                           },
                                                                         );
@@ -509,13 +523,16 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                               Expanded(
                                                                                 child: Stack(
                                                                                   children: [
-                                                                                    ClipRRect(
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                      child: Image.network(
-                                                                                        'https://images.unsplash.com/photo-1597475681177-809cfdc76cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2hob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
-                                                                                        width: double.infinity,
-                                                                                        height: double.infinity,
-                                                                                        fit: BoxFit.cover,
+                                                                                    Container(
+                                                                                      decoration: const BoxDecoration(),
+                                                                                      child: ClipRRect(
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                        child: Image.network(
+                                                                                          listViewMerchantsRecord.image1,
+                                                                                          width: double.infinity,
+                                                                                          height: double.infinity,
+                                                                                          fit: BoxFit.cover,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                     Align(
@@ -545,8 +562,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Padding(
                                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                                    child: Text(
-                                                                                                      '12 nights available',
+                                                                                                    child: AutoSizeText(
+                                                                                                      listViewMerchantsRecord.merchantType.maybeHandleOverflow(maxChars: 13),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                             letterSpacing: 0.0,
@@ -564,16 +581,28 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                   ],
                                                                                 ),
                                                                               ),
-                                                                              Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Property Name',
-                                                                                  style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
-                                                                                      ),
-                                                                                ),
+                                                                              Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      listViewMerchantsRecord.name,
+                                                                                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Icon(
+                                                                                    Icons.location_on,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    size: 16.0,
+                                                                                  ),
+                                                                                ],
                                                                               ),
                                                                               Row(
                                                                                 mainAxisSize: MainAxisSize.max,
@@ -586,13 +615,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                       text: TextSpan(
                                                                                         children: [
                                                                                           TextSpan(
-                                                                                            text: '\$210',
+                                                                                            text: 'Opens:',
                                                                                             style: TextStyle(
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                             ),
                                                                                           ),
                                                                                           TextSpan(
-                                                                                            text: ' /night',
+                                                                                            text: listViewMerchantsRecord.opens,
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -613,10 +642,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                     child: RichText(
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
-                                                                                        children: const [
+                                                                                        children: [
                                                                                           TextSpan(
-                                                                                            text: 'Kauai, Hawaii',
-                                                                                            style: TextStyle(),
+                                                                                            text: listViewMerchantsRecord.located,
+                                                                                            style: TextStyle(
+                                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                              fontSize: 13.0,
+                                                                                            ),
                                                                                           )
                                                                                         ],
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -726,13 +758,16 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           child:
                                                                               Stack(
                                                                             children: [
-                                                                              ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                child: Image.network(
-                                                                                  'https://images.unsplash.com/photo-1597475681177-809cfdc76cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2hob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
-                                                                                  width: double.infinity,
-                                                                                  height: double.infinity,
-                                                                                  fit: BoxFit.cover,
+                                                                              Container(
+                                                                                decoration: const BoxDecoration(),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  child: Image.network(
+                                                                                    'https://images.unsplash.com/photo-1597475681177-809cfdc76cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2hob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                                                                                    width: double.infinity,
+                                                                                    height: double.infinity,
+                                                                                    fit: BoxFit.cover,
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                               Align(
@@ -762,7 +797,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                             child: Padding(
                                                                                               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                              child: Text(
+                                                                                              child: AutoSizeText(
                                                                                                 '12 nights available',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -781,21 +816,31 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                        Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              8.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Property Name',
-                                                                            style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
-                                                                                ),
-                                                                          ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.end,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Property Name',
+                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                            Icon(
+                                                                              Icons.location_on,
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                              size: 16.0,
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                         Row(
                                                                           mainAxisSize:
@@ -810,13 +855,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 text: TextSpan(
                                                                                   children: [
                                                                                     TextSpan(
-                                                                                      text: '\$210',
+                                                                                      text: 'Opens:',
                                                                                       style: TextStyle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                       ),
                                                                                     ),
                                                                                     TextSpan(
-                                                                                      text: ' /night',
+                                                                                      text: ' ',
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             letterSpacing: 0.0,
@@ -837,10 +882,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                               child: RichText(
                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                 text: TextSpan(
-                                                                                  children: const [
+                                                                                  children: [
                                                                                     TextSpan(
-                                                                                      text: 'Kauai, Hawaii',
-                                                                                      style: TextStyle(),
+                                                                                      text: '',
+                                                                                      style: TextStyle(
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        fontSize: 13.0,
+                                                                                      ),
                                                                                     )
                                                                                   ],
                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(

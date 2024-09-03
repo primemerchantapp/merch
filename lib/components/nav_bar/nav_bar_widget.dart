@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
@@ -60,7 +61,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
           color: FlutterFlowTheme.of(context).neutral03,
         ),
         Container(
-          height: 77.0,
+          height: 95.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
@@ -88,18 +89,18 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            FFIcons.ksearch,
+                          FaIcon(
+                            FontAwesomeIcons.map,
                             color: valueOrDefault<Color>(
                               widget.activePageName == 'Explore'
                                   ? FlutterFlowTheme.of(context).accent2
                                   : FlutterFlowTheme.of(context).neutral07,
                               FlutterFlowTheme.of(context).neutral07,
                             ),
-                            size: 28.0,
+                            size: 22.0,
                           ),
                           Text(
-                            'Explore',
+                            'Merch',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -188,18 +189,18 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            Icons.map_outlined,
+                          FaIcon(
+                            FontAwesomeIcons.magento,
                             color: valueOrDefault<Color>(
                               widget.activePageName == 'Trips'
-                                  ? FlutterFlowTheme.of(context).accent2
+                                  ? FlutterFlowTheme.of(context).tertiary
                                   : FlutterFlowTheme.of(context).neutral07,
                               FlutterFlowTheme.of(context).neutral07,
                             ),
-                            size: 28.0,
+                            size: 44.0,
                           ),
                           Text(
-                            'Merchants',
+                            '  ',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
